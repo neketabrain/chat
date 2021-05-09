@@ -1,0 +1,56 @@
+@import "src/styles/palette";
+@import "src/styles/variables";
+
+.button {
+  font-size: 16px;
+  height: 40px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: background-color $transition-duration, border $transition-duration,
+    color $transition-duration;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.primaryButton {
+  @extend .button;
+  background-color: $black;
+  color: $white;
+
+  &:hover:not(:disabled),
+  &:focus {
+    box-shadow: $black-shadow;
+  }
+
+  &:active {
+    background-color: rgba($black, 0.9);
+  }
+}
+
+.secondaryButton {
+  @extend .button;
+  color: $black;
+  border: 2px solid $black;
+  background-color: $white;
+
+  &:hover:not(:disabled),
+  &:focus {
+    box-shadow: $black-shadow;
+  }
+
+  &:active {
+    background-color: $black;
+    color: $white;
+  }
+}

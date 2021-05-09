@@ -1,0 +1,22 @@
+@import "./fonts";
+@import "./palette";
+@import "./variables";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: $light-grey;
+
+  @media screen and (max-width: 992px) {
+    background-color: $white;
+  }
+}
