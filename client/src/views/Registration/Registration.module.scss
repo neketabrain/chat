@@ -1,0 +1,29 @@
+@import "../Login/Login.module.scss";
+
+.inputGroup {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+
+  .inputItem {
+    flex-grow: 1;
+
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    display: block;
+
+    .inputItem {
+      flex-grow: 1;
+
+      &:not(:first-child) {
+        margin: 16px 0 0;
+      }
+    }
+  }
+}
