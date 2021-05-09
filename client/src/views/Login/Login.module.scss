@@ -1,7 +1,12 @@
 @import "src/styles/palette";
+@import "src/styles/variables";
 
 .card {
   padding-top: 32px;
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-top: 24px;
+  }
 }
 
 .input {

@@ -3,7 +3,7 @@ import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 import { PATHS } from 'src/constants';
 import { MainLayout } from 'src/layouts';
-import { Login } from 'src/views';
+import { Login, Registration } from 'src/views';
 
 const Router: FC = () => {
   return (
@@ -11,7 +11,7 @@ const Router: FC = () => {
       <MainLayout>
         <Switch>
           <Route exact={true} path={PATHS.login} component={Login} />
-          <Route exact={true} path={PATHS.registration} />
+          <Route exact={true} path={PATHS.registration} component={Registration} />
 
           <Redirect to={PATHS.login} />
         </Switch>
