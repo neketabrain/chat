@@ -6,3 +6,12 @@
     url("../assets/fonts/NotoSans-Regular.woff") format("woff"),
     url("../assets/fonts/NotoSans-Regular.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../assets/fonts/NotoSans-Bold.woff2") format("woff2"),
+    url("../assets/fonts/NotoSans-Bold.woff") format("woff"),
+    url("../assets/fonts/NotoSans-Bold.ttf") format("truetype");
+}
