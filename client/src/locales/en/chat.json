@@ -1,4 +1,5 @@
 {
   "selectUser": "Select an user to start chat",
-  "you": "You"
+  "you": "You",
+  "enterMessage": "Type a message here..."
 }

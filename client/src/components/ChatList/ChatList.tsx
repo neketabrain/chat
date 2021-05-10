@@ -11,8 +11,6 @@ const ChatList: FC<ChatListProps> = (props) => {
   return (
     <ul className={cn(styles.chatList, className)}>
       <ChatListItem />
-      <ChatListItem />
-      <ChatListItem />
     </ul>
   );
 };
