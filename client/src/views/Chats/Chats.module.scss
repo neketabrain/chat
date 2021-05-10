@@ -1,6 +1,11 @@
 @import "src/styles/palette";
 @import "src/styles/variables";
 
+.container {
+  position: relative;
+  width: 100%;
+}
+
 .card {
   padding-left: 0;
   padding-right: 0;
@@ -19,11 +24,6 @@
     padding-left: 16px;
     padding-right: 16px;
   }
-}
-
-.container {
-  position: relative;
-  width: 100%;
 }
 
 .header {

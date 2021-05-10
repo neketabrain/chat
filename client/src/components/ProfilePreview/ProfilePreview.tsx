@@ -9,12 +9,12 @@ import styles from './ProfilePreview.module.scss';
 import { ProfilePreviewProps } from './ProfilePreview.types';
 
 const ProfilePreview: FC<ProfilePreviewProps> = (props) => {
-  const { withStatus, className } = props;
+  const { withStatus, className, link = PATHS.profile } = props;
   // const { t } = useTranslation('common');
 
   return (
     <div className={cn(styles.container, className)}>
-      <Link to={PATHS.profile} className={styles.link}>
+      <Link to={link} className={styles.link}>
         <div className={styles.imageContainer}>
           {/* <img src="" alt={t('avatar')} className={styles.img} /> */}
           <div className={styles.defaultAvatar}>NK</div>

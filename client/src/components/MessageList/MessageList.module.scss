@@ -1,0 +1,79 @@
+@import "src/styles/palette";
+
+.messageList {
+  position: relative;
+  width: 100%;
+  list-style-type: none;
+}
+
+.messageListItem {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+}
+
+.message {
+  padding: 7px 24px;
+  border-radius: 24px;
+  background-color: $white;
+  color: $black;
+  box-shadow: $black-shadow;
+  max-width: 75%;
+}
+
+.myMessageItem {
+  @extend .messageListItem;
+  justify-content: flex-end;
+
+  .message {
+    background-color: $black;
+    color: $white;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.userMessageItem {
+  @extend .messageListItem;
+
+  .message {
+    border-bottom-left-radius: 0;
+  }
+}
+
+.avatarLink {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  text-decoration: none;
+  display: block;
+}
+
+.avatar {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid $dark-grey;
+}
+
+.defaultAvatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $dark-grey;
+  color: $white;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
