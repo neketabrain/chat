@@ -1,0 +1,68 @@
+@import "src/styles/palette";
+@import "src/styles/variables";
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.header {
+  @extend .container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 16px;
+  border-bottom: 1px solid $grey;
+}
+
+.logout {
+  height: 36px;
+
+  svg {
+    display: none;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    width: 36px;
+    padding: 0;
+
+    svg {
+      display: block;
+      width: 28px;
+      height: 28px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+}
+
+.search {
+  @extend .container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 0;
+
+  input {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    appearance: none;
+    color: $black;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+
+    * {
+      fill: $black;
+    }
+  }
+}

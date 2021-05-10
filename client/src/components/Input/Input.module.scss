@@ -12,6 +12,7 @@
   color: $black;
   font-size: 16px;
   transition: border $transition-duration;
+  appearance: none;
 
   ::placeholder {
     color: $dark-grey;
