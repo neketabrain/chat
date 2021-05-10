@@ -1,5 +1,6 @@
-import { InputHTMLAttributes } from 'react';
+import { InputProps } from '../Input/Input.types';
 
-import { ClassName } from 'src/types';
-
-export type TextFieldProps = InputHTMLAttributes<HTMLInputElement> & ClassName;
+export type TextFieldProps = InputProps & {
+  label: string;
+  forPassword?: boolean;
+};

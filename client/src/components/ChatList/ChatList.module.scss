@@ -1,0 +1,89 @@
+@import "src/styles/palette";
+@import "src/styles/variables";
+
+.chatList {
+  position: relative;
+  width: 100%;
+  list-style-type: none;
+}
+
+.chatListItem {
+  position: relative;
+  width: 100%;
+}
+
+.chatLink {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  outline: none;
+  padding: 8px 24px;
+  transition: background-color $transition-duration;
+
+  &:hover,
+  &:focus {
+    background-color: $light-grey;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.imageContainer {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+}
+
+.img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid $dark-grey;
+}
+
+.defaultAvatar {
+  @extend .profile;
+  justify-content: center;
+  background-color: $dark-grey;
+  color: $white;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.name {
+  font-weight: bold;
+  color: $black;
+  font-size: 14px;
+}
+
+.message {
+  font-size: 14px;
+  color: $dark-grey;
+}
+
+.indicator {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: $blue;
+}

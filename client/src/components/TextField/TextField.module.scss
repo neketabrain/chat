@@ -2,26 +2,51 @@
 @import "src/styles/variables";
 
 .textField {
-  width: 100%;
   position: relative;
+  width: 100%;
   display: block;
-  padding: 10px 16px;
-  border: 1px solid $grey;
-  border-radius: 8px;
+
+  span {
+    color: $black;
+  }
+}
+
+.inputContainer {
+  position: relative;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.button {
+  width: 32px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: $dark-grey;
+  transition: color $transition-duration;
+  position: absolute;
+  right: 12px;
+  top: 8px;
   outline: none;
-  color: $black;
-  font-size: 16px;
-  transition: border $transition-duration;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  ::placeholder {
-    color: $dark-grey;
-  }
-
-  &:hover:not(:disabled):not(:focus) {
-    border-color: $dark-grey;
-  }
-
+  &:hover,
   &:focus {
-    border-color: $black;
+    color: $black;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+
+    * {
+      fill: currentColor;
+      transition: fill $transition-duration;
+    }
   }
 }

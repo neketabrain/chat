@@ -1,0 +1,28 @@
+@import "src/styles/palette";
+@import "src/styles/variables";
+
+.input {
+  width: 100%;
+  position: relative;
+  display: block;
+  padding: 10px 16px;
+  border: 1px solid $grey;
+  border-radius: 8px;
+  outline: none;
+  color: $black;
+  font-size: 16px;
+  transition: border $transition-duration;
+  appearance: none;
+
+  ::placeholder {
+    color: $dark-grey;
+  }
+
+  &:hover:not(:disabled):not(:focus) {
+    border-color: $dark-grey;
+  }
+
+  &:focus {
+    border-color: $black;
+  }
+}
