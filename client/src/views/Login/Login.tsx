@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
-import { Button, Card, H1, TextInput } from 'src/components';
+import { Button, Card, H1, TextField } from 'src/components';
 import { PATHS } from 'src/constants';
 
 import styles from './Login.module.scss';
@@ -15,8 +15,8 @@ const Login: FC = () => {
       <H1>{t('login')}</H1>
 
       <form>
-        <TextInput label={t('username')} placeholder={t('usernamePlaceholder')} className={styles.input} />
-        <TextInput
+        <TextField label={t('username')} placeholder={t('usernamePlaceholder')} className={styles.input} />
+        <TextField
           forPassword={true}
           label={t('password')}
           placeholder={t('passwordPlaceholder')}
