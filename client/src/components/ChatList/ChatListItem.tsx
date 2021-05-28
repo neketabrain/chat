@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
 
+import { LinkButton } from 'src/components';
 import { PATHS } from 'src/constants';
 
 import styles from './ChatList.module.scss';
@@ -12,7 +12,7 @@ const ChatListItem: FC = () => {
 
   return (
     <li className={styles.chatListItem}>
-      <Link className={styles.chatLink} to={`${PATHS.chats}/1`}>
+      <LinkButton className={styles.chatLink} to={`${PATHS.chats}/1`} variant="icon">
         <div className={styles.profile}>
           <div className={styles.imageContainer}>
             <img
@@ -30,7 +30,7 @@ const ChatListItem: FC = () => {
         </div>
 
         <div className={styles.indicator} />
-      </Link>
+      </LinkButton>
     </li>
   );
 };

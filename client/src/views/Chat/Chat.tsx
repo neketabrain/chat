@@ -1,14 +1,17 @@
 import { FC, useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router';
 
-import { ArrowLeftIcon, SendIcon } from 'src/assets';
-import { Card, Button, ProfilePreview, IconLinkButton, Input, MessageList } from 'src/components';
+import { SendIcon } from 'src/assets';
+import { Card, Button, ProfilePreview, ReturnLink, Input, MessageList } from 'src/components';
 import { PATHS } from 'src/constants';
+import { RouterIdParam } from 'src/types';
 
 import styles from './Chat.module.scss';
 
 const Chat: FC = () => {
   const { t } = useTranslation('chat');
+  const { id } = useParams<RouterIdParam>();
 
   const [message, setMessage] = useState('');
   const handleMessageChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -32,11 +35,8 @@ const Chat: FC = () => {
   return (
     <Card className={styles.card}>
       <div className={styles.header}>
-        <IconLinkButton to={PATHS.chats} className={styles.return}>
-          <ArrowLeftIcon />
-        </IconLinkButton>
-
-        <ProfilePreview withStatus={true} link={`${PATHS.user}/1`} />
+        <ReturnLink className={styles.return} to={PATHS.chats} />
+        <ProfilePreview withStatus={true} link={`${PATHS.users}/${id}`} />
       </div>
 
       <div className={styles.chat}>

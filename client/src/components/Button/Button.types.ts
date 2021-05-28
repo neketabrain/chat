@@ -1,8 +1,6 @@
 import { ButtonHTMLAttributes } from 'react';
 
-import { ClassName } from 'src/types';
-
-export type ButtonVariants = 'primary' | 'secondary';
+import { ClassName, ButtonVariants } from 'src/types';
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   ClassName & {
