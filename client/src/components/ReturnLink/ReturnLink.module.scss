@@ -1,0 +1,17 @@
+@import "src/styles/palette";
+@import "src/styles/variables";
+
+.returnLink {
+  border-radius: 8px;
+  color: $black;
+
+  svg * {
+    fill: currentColor;
+    transition: fill $transition-duration;
+  }
+
+  &:hover:not(:disabled),
+  &:focus {
+    color: $dark-grey;
+  }
+}

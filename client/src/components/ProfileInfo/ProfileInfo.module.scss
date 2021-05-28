@@ -1,0 +1,18 @@
+@import "src/styles/palette";
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.profileInfo {
+  @extend .container;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 16px;
+  row-gap: 8px;
+}
+
+.label {
+  color: $dark-grey;
+}

@@ -3,7 +3,7 @@ import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 
 import { PATHS } from 'src/constants';
 import { MainLayout } from 'src/layouts';
-import { Login, Registration } from 'src/views';
+import { Login, Registration, UserInfo } from 'src/views';
 
 import Chat from './Chat';
 import Profile from './Profile';
@@ -15,6 +15,7 @@ const Router: FC = () => {
         <Switch>
           <Route exact={true} path={PATHS.login} component={Login} />
           <Route exact={true} path={PATHS.registration} component={Registration} />
+          <Route exact={true} path={PATHS.userInfo} component={() => <UserInfo isOtherUser={true} />} />
           <Route path={PATHS.chats} component={Chat} />
           <Route path={PATHS.profile} component={Profile} />
 

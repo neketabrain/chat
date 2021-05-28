@@ -9,6 +9,6 @@ export const PATHS = {
   editProfileInfo: '/profile/edit/info',
   editProfileAvatar: '/profile/edit/avatar',
   editProfilePassword: '/profile/edit/password',
-  user: '/user',
-  userInfo: '/user/:id',
+  users: '/users',
+  userInfo: '/users/:id',
 };
