@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router';
 
+import { SendIcon, EditIcon } from 'src/assets';
 import { Card, ProfilePreview, LinkButton, ProfileInfo, ReturnLink } from 'src/components';
 import { PATHS } from 'src/constants';
 import { RouterIdParam } from 'src/types';
@@ -23,9 +24,10 @@ const UserInfo: FC<UserInfoProps> = (props) => {
     <Card>
       <div className={styles.header}>
         <ReturnLink className={styles.return} to={returnLink} />
-        <ProfilePreview withStatus={isOtherUser} link={profileLink} />
+        <ProfilePreview withStatus={isOtherUser} link={profileLink} className={styles.profilePreview} />
         <LinkButton to={buttonLink} className={styles.button}>
-          {isOtherUser ? t('sendMessage') : t('edit')}
+          <span>{isOtherUser ? t('sendMessage') : t('edit')}</span>
+          {isOtherUser ? <SendIcon /> : <EditIcon />}
         </LinkButton>
       </div>
 

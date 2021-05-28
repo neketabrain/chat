@@ -37,6 +37,7 @@
 
 .logout {
   height: 36px;
+  flex-shrink: 0;
 
   svg {
     display: none;
@@ -101,4 +102,8 @@
       right: 16px;
     }
   }
+}
+
+.profilePreview {
+  margin-right: 8px;
 }

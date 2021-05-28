@@ -22,7 +22,7 @@ const Chats: FC = () => {
     <Card className={styles.card}>
       <div className={cn(styles.container, styles.padding)}>
         <div className={styles.header}>
-          <ProfilePreview />
+          <ProfilePreview className={styles.profilePreview} />
           <Button className={styles.logout} onClick={logout}>
             <span>{tCommon('logout')}</span>
             <LogoutIcon />

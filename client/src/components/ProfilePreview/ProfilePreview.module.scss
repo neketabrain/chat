@@ -16,6 +16,7 @@
   @extend .container;
   display: flex;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .imageContainer {
@@ -51,6 +52,11 @@
 .name {
   font-weight: bold;
   color: $black;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  display: block;
 }
 
 .online {
@@ -59,4 +65,10 @@
 
 .offline {
   color: $red;
+}
+
+.nameBlock {
+  @extend .container;
+  overflow-x: hidden;
+  width: 100%;
 }

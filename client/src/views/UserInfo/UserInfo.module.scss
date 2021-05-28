@@ -20,8 +20,33 @@
 
 .button {
   margin-left: auto;
+  flex-shrink: 0;
+
+  svg {
+    display: none;
+  }
+
+  @media screen and (max-width: $mobile-breakpoint) {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+
+    svg {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+
+    span {
+      display: none;
+    }
+  }
 }
 
 .info {
   margin-top: 24px;
+}
+
+.profilePreview {
+  margin-right: 8px;
 }

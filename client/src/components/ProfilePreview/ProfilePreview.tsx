@@ -22,7 +22,7 @@ const ProfilePreview: FC<ProfilePreviewProps> = (props) => {
         </div>
       </LinkButton>
 
-      <div>
+      <div className={styles.nameBlock}>
         <p className={styles.name}>Nikita Karapuzov</p>
         {withStatus && <p className={styles.online}>{t('online')}</p>}
       </div>

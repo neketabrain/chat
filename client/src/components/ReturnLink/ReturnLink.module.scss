@@ -4,6 +4,7 @@
 .returnLink {
   border-radius: 8px;
   color: $black;
+  flex-shrink: 0;
 
   svg * {
     fill: currentColor;

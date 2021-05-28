@@ -8,14 +8,23 @@ const ProfileInfo: FC = () => {
 
   return (
     <div className={styles.profileInfo}>
-      <p className={styles.label}>{t('username')}:</p>
-      <p>@neketabrain</p>
+      <p className={styles.label}>
+        {t('username')}
+        <span className={styles.colon}>:</span>
+      </p>
+      <p className={styles.value}>@neketabrain</p>
 
-      <p className={styles.label}>{t('email')}:</p>
-      <p>karapuzov.nikita@gmail.com</p>
+      <p className={styles.label}>
+        {t('email')}
+        <span className={styles.colon}>:</span>
+      </p>
+      <p className={styles.value}>karapuzov.nikita@gmail.com</p>
 
-      <p className={styles.label}>{t('birthdate')}:</p>
-      <p>30.01.1999</p>
+      <p className={styles.label}>
+        {t('birthdate')}
+        <span className={styles.colon}>:</span>
+      </p>
+      <p className={styles.value}>30.01.1999</p>
     </div>
   );
 };
