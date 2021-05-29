@@ -1,7 +1,7 @@
 {
   "name": "chat-client",
   "author": "Nikita Karapuzov <karapuzov.nikita@gmail.com>",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@types/jest": "^26.0.15",
@@ -40,12 +40,6 @@
     "lint:fix": "eslint --fix --ext .js,.jsx,.ts,.tsx src --color --config .eslintrc.json",
     "lint:types": "tsc --noEmit",
     "prettify": "prettier --write '**/*.{ts,tsx,js,jsx,scss,css,json}'"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
