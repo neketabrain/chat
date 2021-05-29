@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  client:
+    build:
+      context: ./
+      dockerfile: ./client/Dockerfile
+    volumes:
+      - ./client:/client
+      - ./client/node_modules:/client/node_modules
+    command: sh -c "npm rebuild node-sass && npm run start"
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - 3000:3000
+
+  server:
+    build:
+      context: ./
+      dockerfile: ./server/Dockerfile
+    volumes:
+      - ./server:/server
+      - ./server/node_modules:/server/node_modules
+    command: ["yarn", "start"],
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    env_file:
+      - ./server/.env
+    ports:
+      - 8000:8000
