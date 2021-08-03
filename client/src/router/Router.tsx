@@ -19,10 +19,11 @@ const Router: FC = () => {
   useEffect(() => {
     if (getToken()) {
       setLoading(true);
-      getUserInfo().then(({ data }) => {
-        dispatch(setUserStateAction(data));
-        setLoading(false);
-      });
+      getUserInfo()
+        .then(({ data }) => {
+          dispatch(setUserStateAction(data));
+        })
+        .finally(() => setLoading(false));
     }
   }, [dispatch]);
 
