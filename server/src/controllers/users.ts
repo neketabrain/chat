@@ -18,7 +18,7 @@ export const getUserById = async (req: Request, res: Response): Promise<Response
     const user = await User.findByPk(req.params.id);
 
     if (!user) {
-      return res.status(404).send('Not found');
+      return res.status(404).json({ detail: 'Not found' });
     }
 
     return res.status(200).json(user);
@@ -32,7 +32,7 @@ export const deleteUser = async (req: Request, res: Response): Promise<Response>
     const user = await User.findByPk(req.params.id);
 
     if (!user) {
-      return res.status(404).send('Not found');
+      return res.status(404).json({ detail: 'Not found' });
     }
 
     await user.destroy();
@@ -47,14 +47,14 @@ export const getUserInfo = async (req: Request, res: Response): Promise<Response
     const token = getToken(req);
 
     if (!token) {
-      return res.status(403).send('Unauthorized');
+      return res.status(401).send('Unauthorized');
     }
 
     const { userId } = jwt.decode(token, { json: true }) || {};
     const user = await User.findByPk(userId);
 
     if (!user) {
-      return res.status(404).send('Not found');
+      return res.status(404).json({ detail: 'Not found' });
     }
 
     return res.status(200).json(user);

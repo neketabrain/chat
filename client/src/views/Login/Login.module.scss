@@ -1,6 +1,10 @@
 @import "src/styles/palette";
 @import "src/styles/variables";
 
+.title {
+  margin-bottom: 32px;
+}
+
 .card {
   padding-top: 32px;
 
@@ -10,13 +14,7 @@
 }
 
 .input {
-  &:first-child {
-    margin-top: 32px;
-  }
-
-  &:not(:first-child) {
-    margin-top: 16px;
-  }
+  margin-top: 16px;
 }
 
 .button {
@@ -36,6 +34,28 @@
     &:hover,
     &:focus {
       text-decoration: underline;
+    }
+  }
+}
+
+.errorContainer {
+  padding: 8px 16px;
+  position: relative;
+  width: 100%;
+  color: $black;
+  background-color: rgba($red, 0.1);
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+
+    * {
+      fill: $red;
     }
   }
 }

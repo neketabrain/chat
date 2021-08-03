@@ -47,7 +47,10 @@ const User = db.define<UserInstance>('users', {
 
 User.prototype.toJSON = function () {
   const values = Object.assign({}, this.get());
+
   delete values.password;
+  delete values.createdAt;
+  delete values.updatedAt;
 
   return values;
 };

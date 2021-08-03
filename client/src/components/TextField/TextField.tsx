@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import { useState, FC } from 'react';
+import { useState, forwardRef } from 'react';
 
 import { ClosedEyeIcon, OpenedEyeIcon } from 'src/assets';
 import { Input } from 'src/components';
@@ -7,8 +7,8 @@ import { Input } from 'src/components';
 import styles from './TextField.module.scss';
 import { TextFieldProps } from './TextField.types';
 
-const TextField: FC<TextFieldProps> = (props) => {
-  const { label, className, type, forPassword, ...rest } = props;
+const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
+  const { label, className, type, forPassword, hasError, error, ...rest } = props;
   const [inputType, setInputType] = useState(forPassword ? 'password' : type);
 
   const toggleInputType = () => {
@@ -19,7 +19,7 @@ const TextField: FC<TextFieldProps> = (props) => {
     <label className={cn(styles.textField, className)}>
       <span>{label}</span>
       <div className={styles.inputContainer}>
-        <Input type={inputType} {...rest} />
+        <Input type={inputType} ref={ref} hasError={!!error || hasError} {...rest} />
 
         {forPassword && (
           <button className={styles.button} onClick={toggleInputType} type="button">
@@ -28,8 +28,9 @@ const TextField: FC<TextFieldProps> = (props) => {
           </button>
         )}
       </div>
+      {!!error && <p className={styles.error}>{error}</p>}
     </label>
   );
-};
+});
 
 export default TextField;

@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 
+import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 8000;
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 app.post('/auth/register', registerUser);
 app.post('/auth/login', loginUser);
