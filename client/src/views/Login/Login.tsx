@@ -9,8 +9,7 @@ import { Link } from 'react-router-dom';
 import { AlertIcon } from 'src/assets';
 import { Button, Card, H1, TextField } from 'src/components';
 import { PATHS } from 'src/constants';
-import { LoginRequest, login } from 'src/services';
-import { getUserInfo } from 'src/services/users';
+import { LoginRequest, loginUser, getUserInfo } from 'src/services';
 import { setUserStateAction } from 'src/store/user';
 
 import { loginSchema } from './Login.constants';
@@ -36,7 +35,7 @@ const Login: FC = () => {
     setServerErrors(null);
 
     try {
-      await login(values);
+      await loginUser(values);
       const { data } = await getUserInfo();
       dispatch(setUserStateAction(data));
     } catch (error) {
