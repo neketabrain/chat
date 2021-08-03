@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { AlertIcon } from 'src/assets';
@@ -10,12 +11,14 @@ import { Button, Card, H1, TextField } from 'src/components';
 import { PATHS } from 'src/constants';
 import { LoginRequest, login } from 'src/services';
 import { getUserInfo } from 'src/services/users';
+import { setUserStateAction } from 'src/store/user';
 
 import { loginSchema } from './Login.constants';
 import styles from './Login.module.scss';
 
 const Login: FC = () => {
   const { t } = useTranslation('auth');
+  const dispatch = useDispatch();
 
   const [isLoading, setLoading] = useState(false);
   const [serverErrors, setServerErrors] = useState<Record<string, string> | null>();
@@ -35,6 +38,7 @@ const Login: FC = () => {
     try {
       await login(values);
       const { data } = await getUserInfo();
+      dispatch(setUserStateAction(data));
     } catch (error) {
       setServerErrors(error?.response?.data);
     }
