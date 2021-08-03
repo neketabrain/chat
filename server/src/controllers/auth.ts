@@ -54,11 +54,8 @@ export const loginUser = async (req: Request, res: Response): Promise<Response> 
 
     const errors: Record<string, string> = {};
 
-    if (!username?.trim()) {
-      errors.username = 'Username is required';
-    }
-    if (!password?.trim()) {
-      errors.password = 'Password is required';
+    if (!username?.trim() || !password?.trim()) {
+      return res.status(400).json({ detail: 'Invalid credentials' });
     }
 
     if (Object.keys(errors).length) {
@@ -74,7 +71,7 @@ export const loginUser = async (req: Request, res: Response): Promise<Response> 
       return res.status(200).json({ token });
     }
 
-    return res.status(400).json({ error: 'Invalid credentials' });
+    return res.status(400).json({ detail: 'Invalid credentials' });
   } catch (error) {
     return res.status(500).json(error);
   }

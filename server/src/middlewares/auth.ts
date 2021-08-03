@@ -8,13 +8,13 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
   const token = getToken(req);
 
   if (!token) {
-    return res.status(403).send('Unauthorized');
+    return res.status(401).send('Unauthorized');
   }
 
   try {
     jwt.verify(token, JWT_SECRET_KEY);
   } catch {
-    return res.status(403).send('Unauthorized');
+    return res.status(401).send('Unauthorized');
   }
 
   return next();
